@@ -13,30 +13,10 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <war.finalname>fh3270</war.finalname>
     </properties>
 
     <dependencies>
-<!--
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-       -->
-                <!-- logging , spring 5 no more bridge, thanks spring-jcl -->
-        <!--
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
-        </dependency>
--->
 
         <!-- https://mvnrepository.com/artifact/log4j/log4j -->
         <dependency>
@@ -55,9 +35,8 @@
 
     </dependencies>
 
-
     <build>
-        <finalName>java-web-project</finalName>
+        <finalName>${war.finalname}</finalName>
         <plugins>
             <!-- http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html -->
             <plugin>
@@ -66,31 +45,38 @@
                 <version>9.4.12.v20180830</version>
             </plugin>
 
-            <!-- Default is too old, update to latest to run the latest Spring 5 + jUnit 5 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.0</version>
             </plugin>
 
-            <!-- Default 2.2 is too old, update to latest -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <target name="copy">
+                                <mkdir dir="${project.build.directory}/${war.finalname}/Classes"/>
+                                <copy todir="${project.build.directory}/${war.finalname}/Classes">
+                                    <fileset dir="${project.build.directory}/classes"/>
+                                </copy>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.2</version>
-                <!--
-                <configuration>
-                    <webResources>
-                        <resource>
-                            <directory>${project.build.directory}</directory>
-                            <targetPath>WEB-INF</targetPath>
-                            <includes>
-                                <include>freehost.properties</include>
-                            </includes>
-                        </resource>
-                    </webResources>
-                </configuration>
-                -->
             </plugin>
 
         </plugins>
