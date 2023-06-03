@@ -26,50 +26,6 @@
 		<module>web</module>
 	</modules>
 
-
-	<dependencies>
-		<!--
-		<dependency>
-			<groupId>net.sf.freehost3270</groupId>
-			<artifactId>fh3270-client</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>net.sf.freehost3270</groupId>
-			<artifactId>fh3270-applet</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>net.sf.freehost3270</groupId>
-			<artifactId>fh3270-app</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>net.sf.freehost3270</groupId>
-			<artifactId>fh3270-proxy</artifactId>
-			<version>0.0.1</version>
-		</dependency>
--->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
-		</dependency>
-<!--
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-		-->
-	</dependencies>
-
-
 	<build>
 		<plugins>
 			<plugin>

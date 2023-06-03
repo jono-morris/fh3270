@@ -4,15 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>net.sf.freehost3270</groupId>
-        <artifactId>fh3270-suite</artifactId>
-        <version>0.0.1</version>
-    </parent>
-
     <groupId>net.sf.freehost3270</groupId>
     <artifactId>fh3270-app</artifactId>
     <version>0.0.1</version>
+
     <packaging>jar</packaging>
     <name>fh3270 app</name>
 
