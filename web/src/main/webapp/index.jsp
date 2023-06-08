@@ -50,7 +50,7 @@ generated invalid XHTML code.
       <p><a href="#keylist">Hot keys description</a></p>
       <applet code="net.sf.freehost3270.applet.FreeHostApplet"
 	      id="FreeHostApplet" name="FreeHostApplet"
-	      archive="applet/freehost3270-client-0.2-CURRENT.jar,applet/freehost3270-gui-0.2-CURRENT.jar,applet/freehost3270-applet-0.2-CURRENT.jar"
+	      archive="applet/fh3270-client-0.0.1.jar,applet/fh3270-app-0.0.1.jar,applet/fh3270-applet-0.0.1.jar"
 	      width="620" height="460" align="middle"
 	      jreversion="1.4">
 	&lt;param name=&quot;avail-hosts&quot; value=&quot;<jsp:expression>avail_hosts</jsp:expression>&quot; /&gt;

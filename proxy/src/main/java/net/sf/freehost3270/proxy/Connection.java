@@ -156,6 +156,7 @@ public class Connection implements Runnable, AgentMonitor {
 
             // the byte immediately following 0xCC will
             // be the port number.
+            // TODO read 4 bytes for int
             byte port = (byte) eis.read();
             byte[] hostNameDone = new byte[hostNameLen - 1];
             System.arraycopy(hostNameIn, 0, hostNameDone, 0, hostNameLen - 1);
